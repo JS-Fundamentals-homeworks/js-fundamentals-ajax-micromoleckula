@@ -5,3 +5,9 @@
 // який створений у файлі index.html
 // Запустити програму за допомогою Live Server
 // Перевірити за допомогою команди npm tests/task1.test.js 
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(r => r.json())
+  .then(users => users.forEach(u => {
+    document.querySelector('.usersList').innerHTML += `<li>${u.name}</li>`;
+  }));
